@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
-  get 'ownerships/create'
-
-  get 'ownerships/destroy'
-
-  get 'items/new'
-
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
+  get 'rankings/want'
 
   root to: 'toppages#index'
   
@@ -18,6 +8,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   get 'signup', to: 'users#new'
+  
+  get 'rankings/want', to: 'rankings#want'
   resources :users, only: [:show, :new, :create]
   
   resources :items, only: [:new, :show]
